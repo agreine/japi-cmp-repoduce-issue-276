@@ -6,7 +6,7 @@
 
 	<groupId>com.desoft.japi-comp</groupId>
 	<artifactId>japi-cmp-issue276</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>jar</packaging>
 
@@ -15,4 +15,28 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.github.siom79.japicmp</groupId>
+				<artifactId>japicmp-maven-plugin</artifactId>
+				<version>0.14.4</version>
+				<configuration>
+					<parameter>
+						<breakBuildBasedOnSemanticVersioning>true</breakBuildBasedOnSemanticVersioning>
+					</parameter>
+					<skip>${japicmp_maven_plugin.skip}</skip>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<goals>
+							<goal>cmp</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+	</build>
 </project>
