@@ -20,15 +20,15 @@
 			<plugin>
 				<groupId>com.github.siom79.japicmp</groupId>
 				<artifactId>japicmp-maven-plugin</artifactId>
-				<version>0.14.4</version>
+				<version>0.13.1</version>
 				<configuration>
 					<parameter>
 						<breakBuildBasedOnSemanticVersioning>true</breakBuildBasedOnSemanticVersioning>
 						<overrideCompatibilityChangeParameters combine.children="append">
 						  <overrideCompatibilityChangeParameter>
 							<compatibilityChange>CLASS_REMOVED</compatibilityChange>
-							<binaryCompatible>true</binaryCompatible>
-							<sourceCompatible>true</sourceCompatible>
+							<binaryCompatible>false</binaryCompatible>
+							<sourceCompatible>false</sourceCompatible>
 							<semanticVersionLevel>MINOR</semanticVersionLevel>
 						  </overrideCompatibilityChangeParameter>
 						</overrideCompatibilityChangeParameters>
