@@ -5,7 +5,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<groupId>com.desoft.japi-comp</groupId>
-	<artifactId>japi-cmp-issue276</artifactId>
+	<artifactId>japi-cmp-binary</artifactId>
 	<version>1.0.1</version>
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>jar</packaging>
@@ -24,6 +24,14 @@
 				<configuration>
 					<parameter>
 						<breakBuildBasedOnSemanticVersioning>true</breakBuildBasedOnSemanticVersioning>
+						<overrideCompatibilityChangeParameters combine.children="append">
+						  <overrideCompatibilityChangeParameter>
+							<compatibilityChange>CLASS_REMOVED</compatibilityChange>
+							<binaryCompatible>true</binaryCompatible>
+							<sourceCompatible>true</sourceCompatible>
+							<semanticVersionLevel>MINOR</semanticVersionLevel>
+						  </overrideCompatibilityChangeParameter>
+						</overrideCompatibilityChangeParameters>
 					</parameter>
 					<skip>${japicmp_maven_plugin.skip}</skip>
 				</configuration>
